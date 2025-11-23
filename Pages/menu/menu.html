@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu - MZ Cafe</title>
+
+    <!--Tab Icon-->
+    <link rel="shortcut icon" href="/Assets/Textures/LogoMZCafe White.svg" type="image/x-icon">
+    <!--CSS Link-->
+    <link rel="stylesheet" href="/index.css">
+    <!--Menu CSS Link-->
+    <link rel="stylesheet" href="menu.css">
+
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+</head>
+
+<body class="body-color">
+
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-4">
+            <!--Logo and Theme Toggle Wrapper-->
+            <div class="navbar-brand-wrapper">
+                <!--Logo-->
+                <a class="navbar-brand navbar-theme-text" href="/index.html">
+                    <img src="/Assets/Textures/LogoMZCafe White.svg" alt="MZ Cafe Logo" height="80">
+                </a>
+
+                <!--Theme Toggle-->
+                <button class="Theme_Toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="Light_Ico navbar-theme-icon" id="lightIcon"></i>
+                    <i class="Dark_Ico navbar-theme-icon" id="darkIcon" style="display: none;"></i>
+                </button>
+            </div>
+
+            <!--Mobile Toggle-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Links-->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-theme-text" href="/index.html"><span class="icon-text-wrapper"><i
+                                    class="Home_Ico navbar-theme-icon"></i>Home</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link navbar-theme-text" href="/Pages/menu/menu.html"><span
+                                class="icon-text-wrapper"><i class="Menu_Ico navbar-theme-icon"></i>Menu</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link navbar-theme-text" href="/Pages/menu/menu.html#promo-items"><span
+                                class="icon-text-wrapper"><i class="Promos_Ico navbar-theme-icon"></i>Promos</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link navbar-theme-text" href="/Pages/about/index.html"><span
+                                class="icon-text-wrapper"><i class="About_Ico navbar-theme-icon"></i>About Us</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link navbar-theme-text" href="/index.html#delivery"><span
+                                class="icon-text-wrapper"><i class="Delivery_Ico navbar-theme-icon"></i>Order
+                                Online</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Hero Header-->
+    <header class="Hero_Section position-relative d-flex align-items-center justify-content-center menu-mode"
+        style="min-height: 90vh;">
+        <!--Hero Text-->
+        <div class="Hero_Text_Area Main_Text text-center">
+            <h1>Our Menu</h1>
+            <hr class="Hr_Left mx-auto">
+            <!--Intro Text-->
+            <p>
+                Discover our delicious selection of drinks and meals, carefully crafted for your enjoyment.
+            </p>
+        </div>
+    </header>
+
+    <!--Spacer-->
+    <section class="Spacer">
+        <hr class="Hr_Left">
+    </section>
+
+    <main>
+        <!-- Tab Navigation -->
+        <ul class="menu-tabs">
+            <li>
+                <button class="menu-tab-btn active" data-tab="drinks-items">Drinks</button>
+            </li>
+            <li>
+                <button class="menu-tab-btn" data-tab="meals-items">Meals</button>
+            </li>
+            <li>
+                <button class="menu-tab-btn" data-tab="promo-items">Our Promos!</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="menu-tabs-content">
+
+            <!-- Drinks Tab -->
+            <div id="drinks-items" class="menu-tab-pane active">
+
+                <h2>Featured Drinks</h2>
+                <hr class="Hr_Left">
+
+                <div class="menu-grid-container">
+
+                    <!-- Drink Card 1 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Hazelnut Latte">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Hazelnut Latte</h5>
+                            <p class="card-text mb-2">Rich espresso with hazelnut syrup</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱120</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 2 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Iced Mocha">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Iced Mocha</h5>
+                            <p class="card-text mb-2">Chocolate and espresso over ice</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱140</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 3 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Caramel Macchiato">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caramel Macchiato</h5>
+                            <p class="card-text mb-2">Velvety milk with caramel drizzle</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱150</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 4 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Matcha Frappe">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Matcha Frappe</h5>
+                            <p class="card-text mb-2">Creamy matcha blended with ice</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱160</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 5 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Vanilla Cold Brew">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Vanilla Cold Brew</h5>
+                            <p class="card-text mb-2">Smooth cold brew with vanilla notes</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱130</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 6 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Cinnamon Cappuccino">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cinnamon Cappuccino</h5>
+                            <p class="card-text mb-2">Frothy cappuccino with cinnamon dust</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱125</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 7 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Espresso Shot">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Espresso Shot</h5>
+                            <p class="card-text mb-2">Classic single/double shot</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱80</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 8 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Chai Latte">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Chai Latte</h5>
+                            <p class="card-text mb-2">Spiced tea blended with milk</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱135</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 9 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Coconut Iced Coffee">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Coconut Iced Coffee</h5>
+                            <p class="card-text mb-2">Tropical coconut and cold brew</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱150</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drink Card 10 -->
+                    <div class="card drink-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Salted Caramel Frappe">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Salted Caramel Frappe</h5>
+                            <p class="card-text mb-2">Sweet and salty blended treat</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱170</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Meals Tab -->
+            <div id="meals-items" class="menu-tab-pane">
+
+                <h2>Featured Meals</h2>
+                <hr class="Hr_Left">
+
+                <div class="menu-grid-container">
+
+                    <!-- Meal Card 1 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Classic Burger">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Classic Burger</h5>
+                            <p class="card-text mb-2">Juicy beef patty with fresh toppings</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱250</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 2 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Caesar Salad">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caesar Salad</h5>
+                            <p class="card-text mb-2">Crispy greens with parmesan and croutons</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱180</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 3 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Grilled Chicken Sandwich">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Grilled Chicken Sandwich</h5>
+                            <p class="card-text mb-2">Tender chicken with herbs and veggies</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱220</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 4 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Pasta Carbonara">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Pasta Carbonara</h5>
+                            <p class="card-text mb-2">Creamy sauce with bacon and cheese</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱280</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 5 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Fish and Chips">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Fish and Chips</h5>
+                            <p class="card-text mb-2">Crispy battered fish with golden fries</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱240</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 6 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Steak Plate">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Steak Plate</h5>
+                            <p class="card-text mb-2">Premium cut with seasonal vegetables</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱450</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 7 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Chicken Fried Rice">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Chicken Fried Rice</h5>
+                            <p class="card-text mb-2">Fluffy rice with tender chicken pieces</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱200</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 8 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Vegetable Pizza">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Vegetable Pizza</h5>
+                            <p class="card-text mb-2">Fresh veggies on a crispy crust</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱320</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 9 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="BBQ Ribs">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">BBQ Ribs</h5>
+                            <p class="card-text mb-2">Smoky ribs with tangy sauce</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱380</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meal Card 10 -->
+                    <div class="card meal-card">
+                        <img src="/Assets/Textures/Placeholder.png" class="card-img-top" alt="Shrimp Tempura">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Shrimp Tempura</h5>
+                            <p class="card-text mb-2">Light and crispy battered shrimp</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">₱350</span>
+                                <a href="#" class="btn btn-sm btn-order">Order</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Our Promos Tab -->
+            <div id="promo-items" class="menu-tab-pane promo-items">
+
+                <h2>Special Promotions</h2>
+                <hr>
+
+                <!-- Promo Card 1 - Left Image -->
+                <div class="promo-card-alt d-flex flex-row align-items-center gap-5">
+                    <!--Promo Thumbnail-->
+                    <img src="/Assets/Textures/Placeholder.png" alt="Buy 2 Get 1 Free"
+                        style="width: 24%; height: auto; object-fit: cover;">
+                    <!--Promo Text-->
+                    <div>
+                        <h3>☕ Buy 2 Get 1 Free</h3>
+                        <hr>
+                        <p>Every purchase of 2 specialty drinks gets you a 3rd drink for free!</p>
+                        <p class="price">Valid until December 31, 2025</p>
+                    </div>
+                </div>
+
+                <!-- Promo Card 2 - Right Image -->
+                <div class="promo-card-alt d-flex flex-row-reverse align-items-center gap-5">
+                    <!--Promo Thumbnail-->
+                    <img src="/Assets/Textures/Placeholder.png" alt="Meal Combo Discount"
+                        style="width: 24%; height: auto; object-fit: cover;">
+                    <!--Promo Text-->
+                    <div>
+                        <h3>🍔 Meal Combo Discount</h3>
+                        <hr>
+                        <p>Get any meal with a drink and dessert for just ₱399! Regularly ₱499</p>
+                        <p class="price">Save ₱100</p>
+                    </div>
+                </div>
+
+                <!-- Promo Card 3 - Left Image -->
+                <div class="promo-card-alt d-flex flex-row align-items-center gap-5">
+                    <!--Promo Thumbnail-->
+                    <img src="/Assets/Textures/Placeholder.png" alt="Late Night Special"
+                        style="width: 24%; height: auto; object-fit: cover;">
+                    <!--Promo Text-->
+                    <div>
+                        <h3>🌙 Late Night Special</h3>
+                        <hr>
+                        <p>All drinks 20% off from 6 PM to 10 PM every weekday!</p>
+                        <p class="price">6:00 PM - 10:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Promo Card 4 - Right Image -->
+                <div class="promo-card-alt d-flex flex-row-reverse align-items-center gap-5">
+                    <!--Promo Thumbnail-->
+                    <img src="/Assets/Textures/Placeholder.png" alt="Group Bundle"
+                        style="width: 24%; height: auto; object-fit: cover;">
+                    <!--Promo Text-->
+                    <div>
+                        <h3>👥 Group Bundle</h3>
+                        <hr>
+                        <p>Order for 4 or more people and get 15% off your total bill.</p>
+                        <p class="price">Minimum ₱2,000 purchase</p>
+                    </div>
+                </div>
+
+                <!-- Promo Card 5 - Left Image -->
+                <div class="promo-card-alt d-flex flex-row align-items-center gap-5">
+                    <!--Promo Thumbnail-->
+                    <img src="/Assets/Textures/Placeholder.png" alt="Birthday Special"
+                        style="width: 24%; height: auto; object-fit: cover;">
+                    <!--Promo Text-->
+                    <div>
+                        <h3>🎂 Birthday Special</h3>
+                        <hr>
+                        <p>Celebrate with us! Birthday celebrants get a free dessert with any meal purchase.</p>
+                        <p class="price">Valid with valid ID</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!--Spacer-->
+    <section class="Spacer">
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-dark py-4 footer_color">
+
+        <hr>
+
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-between">
+
+                <!--Links-->
+                <div class="col-md-6 col-lg-4 text-start">
+                    <ul class="Footer_Links list-unstyled gap-3 start-0">
+
+                        <!--Instagram-->
+                        <li class="nav-item">
+                            <a href="https://www.instagram.com/mz_cafee" target="_blank" rel="noopener noreferrer"
+                                class="nav-link footer-theme-text">
+                                <span class="icon-text-wrapper"><i
+                                        class="Instagram_Ico footer-theme-icon"></i>Instagram</span>
+                            </a>
+                        </li>
+
+                        <!--Facebook-->
+                        <li class="nav-item">
+                            <a href="https://web.facebook.com/mzcafe" target="_blank" rel="noopener noreferrer"
+                                class="nav-link footer-theme-text">
+                                <span class="icon-text-wrapper"><i
+                                        class="Facebook_Ico footer-theme-icon"></i>Facebook</span>
+                            </a>
+                        </li>
+
+                        <!--Location-->
+                        <li class="nav-item">
+                            <a href="" target="_blank" rel="noopener noreferrer" class="nav-link footer-theme-text">
+                                <span class="icon-text-wrapper"><i
+                                        class="Location_Ico footer-theme-icon"></i>Location</span>
+                            </a>
+                        </li>
+
+                        <!--Email-->
+                        <li class="nav-item">
+                            <a href="mailto:zaldymangaliag.ge2018@gmail.com" class="nav-link footer-theme-text">
+                                <span class="icon-text-wrapper"><i
+                                        class="Email_Ico footer-theme-icon"></i>zaldymangaliag.ge2018@gmail.com</span>
+                            </a>
+                        </li>
+
+                        <!--Contact No-->
+                        <li class="nav-item">
+                            <a href="tel:09665935615" class="nav-link footer-theme-text">
+                                <span class="icon-text-wrapper"><i class="Phone_Ico footer-theme-icon"></i>0966 593
+                                    561</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!--Logo-->
+                <a href="/" class="col-md-6 col-lg-4 text-center">
+                    <img src="/Assets/Textures/LogoMZCafe White.svg" alt="MZ Cafe Logo" height="80">
+                </a>
+
+                <!--Navigation-->
+                <div class="col-md-6 col-lg-4 text-end">
+
+                    <ul class="Footer_Links list-unstyled gap-3 end-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link footer-theme-text" href="/index.html"><span class="icon-text-wrapper"><i
+                                        class="Home_Ico footer-theme-icon"></i>Home</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link footer-theme-text" href="/Pages/menu/index.html"><span
+                                    class="icon-text-wrapper"><i class="Menu_Ico footer-theme-icon"></i>Menu</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link footer-theme-text" href="/Pages/promo/index.html"><span
+                                    class="icon-text-wrapper"><i
+                                        class="Promos_Ico footer-theme-icon"></i>Promos</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link footer-theme-text" href="/Pages/about/index.html"><span
+                                    class="icon-text-wrapper"><i class="About_Ico footer-theme-icon"></i>About
+                                    Us</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link footer-theme-text" href="/index.html#delivery"><span
+                                    class="icon-text-wrapper"><i class="Delivery_Ico footer-theme-icon"></i>Order
+                                    Online</span></a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <!-- Menu Page Tab Functionality -->
+    <script>
+        const heroSection = document.querySelector('.Hero_Section');
+
+        // Function to activate a tab
+        function activateTab(tabName) {
+            // Remove active class from all tabs and panes
+            document.querySelectorAll('.menu-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.menu-tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding pane
+            const btn = document.querySelector(`[data-tab="${tabName}"]`);
+            if (btn) {
+                btn.classList.add('active');
+            }
+            const pane = document.getElementById(tabName);
+            if (pane) {
+                pane.classList.add('active');
+            }
+
+            // Remove all hero mode classes
+            heroSection.classList.remove('drinks-mode', 'meals-mode', 'promo-mode', 'menu-mode');
+
+            // Change hero background based on active tab
+            if (tabName === 'drinks-items') {
+                heroSection.classList.add('drinks-mode');
+            } else if (tabName === 'meals-items') {
+                heroSection.classList.add('meals-mode');
+            } else if (tabName === 'promo-items') {
+                heroSection.classList.add('promo-mode');
+            }
+        }
+
+        // Check if there's a hash fragment when page loads
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1); // Remove the # character
+            if (hash && document.getElementById(hash)) {
+                activateTab(hash);
+            }
+        });
+
+        // Handle hash changes (when user clicks the back/forward buttons)
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                activateTab(hash);
+            }
+        });
+
+        // Add click event listeners to tab buttons
+        document.querySelectorAll('.menu-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.getAttribute('data-tab');
+                activateTab(tabName);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

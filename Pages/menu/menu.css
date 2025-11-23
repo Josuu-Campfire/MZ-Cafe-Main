@@ -1,0 +1,448 @@
+/*MENU PAGE SPECIFIC STYLES*/
+/*Hero Section Overrides*/
+    .Hero_Section {
+        /* Background image - changed for menu page */
+        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
+        transition: background-image 0.5s ease;
+        
+    }
+    /* Hero background changes based on active tab */
+    .Hero_Section.promo-mode {
+        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/SpecialsThumb.jpg");
+    }
+    .Hero_Section.menu-mode {
+        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
+    }
+    .Hero_Section.drinks-mode {
+        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/Food3.jpg");
+    }
+    .Hero_Section.meals-mode {
+        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/food2.jpg");
+    }
+
+
+/*Carousel Size Reduction*/
+    .drinks-carousel-scroll,
+    .meals-carousel-scroll {
+        /* Padding */
+        padding: 0 4% !important;
+    }
+
+    .drink-card,
+    .meal-card {
+        /* Size reduction */
+        min-height: 200px !important;
+        flex: 0 0 calc(25% - 0.8rem) !important;
+        max-width: calc(25% - 0.8rem) !important;
+    }
+
+    .drink-card .card-img-top,
+    .meal-card .card-img-top {
+        height: 100px !important;
+    }
+
+    .drink-card .card-body,
+    .meal-card .card-body {
+        padding: 0.5rem !important;
+    }
+
+    .drink-card .card-title,
+    .drink-card .card-text,
+    .meal-card .card-title,
+    .meal-card .card-text {
+        font-size: 0.9em;
+    }
+
+    .drink-card .btn-order,
+    .meal-card .btn-order {
+        padding: 0.2rem 0.4rem !important;
+        font-size: 0.8rem !important;
+    }
+
+/*Grid Container for Grid-Based Tabs (Drinks, Meals)*/
+    .menu-grid-container {
+        /* Display */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .menu-grid-container .drink-card,
+    .menu-grid-container .meal-card {
+        /* Override carousel sizing */
+        flex: none !important;
+        max-width: 100% !important;
+        min-height: 300px !important;
+    }
+
+    .menu-grid-container .drink-card .card-img-top,
+    .menu-grid-container .meal-card .card-img-top {
+        height: 180px !important;
+        object-fit: cover;
+    }
+
+    .menu-grid-container .card-body {
+        padding: 1rem !important;
+    }
+
+    .menu-grid-container .card-title {
+        font-size: 1.1em;
+    }
+
+    .menu-grid-container .card-text {
+        font-size: 0.95em;
+    }
+
+    /* Responsive: 2 columns on tablet */
+    @media (max-width: 991.98px) {
+        .menu-grid-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+    }
+
+    /* Responsive: 1 column on mobile */
+    @media (max-width: 575.98px) {
+        .menu-grid-container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .menu-grid-container .drink-card,
+        .menu-grid-container .meal-card {
+            min-height: 250px !important;
+        }
+
+        .menu-grid-container .drink-card .card-img-top,
+        .menu-grid-container .meal-card .card-img-top {
+            height: 150px !important;
+        }
+    }
+
+    /* Responsive: 3 cards on medium screens */
+    @media (max-width: 1199.98px) {
+        .drink-card,
+        .meal-card {
+            flex: 0 0 calc(33.333% - 0.8rem) !important;
+            max-width: calc(33.333% - 0.8rem) !important;
+            min-height: 180px !important;
+        }
+
+        .drink-card .card-img-top,
+        .meal-card .card-img-top {
+            height: 80px !important;
+        }
+    }
+
+    /* Responsive: 2 cards on tablet */
+    @media (max-width: 767.98px) {
+        .drink-card,
+        .meal-card {
+            flex: 0 0 calc(50% - 0.8rem) !important;
+            max-width: calc(50% - 0.8rem) !important;
+            min-height: 160px !important;
+        }
+
+        .drink-card .card-img-top,
+        .meal-card .card-img-top {
+            height: 70px !important;
+        }
+    }
+
+    /* Beverage and Meals section padding reduction */
+    .Beverage_Section,
+    .Meals_Section {
+        padding: 2rem 0 !important;
+    }
+
+    .Beverage_Title,
+    .Meals_Title {
+        padding: 0 4% !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .Beverage_Title h2,
+    .Meals_Title h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.5rem;
+    }
+
+/*Tab Navigation*/
+    .menu-tabs {
+        /* Position */
+        display: flex;
+        gap: 0;
+        padding: 0 4%;
+        margin-bottom: 0;
+        border-bottom: none;
+
+        /* Display */
+        list-style: none;
+    }
+
+    .menu-tab-btn {
+        /* Position */
+        padding: 0.75rem 1.5rem;
+        border: none;
+        background-color: var(--Accent);
+        cursor: pointer;
+        font-size: 1.2em;
+        font-family: Instrument Serif;
+        letter-spacing: 1.5px;
+        margin-right: 0.5rem;
+
+        /* Color */
+        color: var(--Black);
+
+        /* Animation */
+        transition: all 0.3s ease;
+    }
+
+    .menu-tab-btn:hover {
+        /* Color */
+        background-color: var(--Black);
+        color: var(--White);
+    }
+
+    .menu-tab-btn.active {
+        /* Color */
+        background-color: var(--Accent);
+        color: var(--Black);
+    }
+
+/*Tab Content*/
+    .menu-tabs-content {
+        /* Position */
+        padding: 0 4% 4%;
+    }
+
+    .menu-tab-pane {
+        /* Display */
+        display: none;
+    }
+
+    .menu-tab-pane.active {
+        /* Display */
+        display: block;
+    }
+
+/*Menu Tab Content*/
+    .menu-tab-pane.menu-items {
+        /* Display */
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+/*Drinks Tab Content*/
+    #drinks-items {
+        /* Position */
+        padding: 2rem;
+        background-color: var(--Black);
+
+        /* Color */
+    }
+
+    #drinks-items h2 {
+        /* Color */
+        color: var(--White);
+    }
+
+    #drinks-items .Hr_Left {
+        /* Color */
+        border-color: var(--White);
+    }
+
+    #drinks-items .card-title,
+    #drinks-items .card-text {
+        /* Color */
+        color: var(--White);
+    }
+
+/*Meals Tab Content*/
+    #meals-items {
+        /* Position */
+        padding: 2rem;
+        background-color: var(--Black);
+    }
+
+    #meals-items h2 {
+        /* Color */
+        color: var(--White);
+    }
+
+/*Promos Tab Content*/
+    .menu-tab-pane.promo-items {
+        /* Position */
+        padding: 2rem;
+        background-color: var(--Black);
+
+        /* Color */
+        color: var(--White);
+    }
+
+    .menu-tab-pane.promo-items h2 {
+        /* Color */
+        color: var(--White);
+    }
+
+    .menu-tab-pane.promo-items p {
+        /* Color */
+        color: var(--White);
+    }
+
+    /* Promo Cards with alternating layout - using White background for light mode */
+    .promo-card-alt {
+        /* Position */
+        padding: 2rem;
+        margin-bottom: 2rem;
+        background-color: var(--White);
+        border-radius: 8px;
+
+        /* Display */
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .promo-card-alt h3 {
+        /* Position */
+        margin-top: 0;
+        margin-bottom: 1rem;
+
+        /* Color */
+        color: var(--Black);
+
+        /* Typography */
+        font-size: 1.3em;
+    }
+
+    .promo-card-alt p {
+        /* Position */
+        margin: 0.75rem 0;
+
+        /* Color */
+        color: var(--Black);
+
+        /* Typography */
+        font-size: 1em;
+    }
+
+    .promo-card-alt .price {
+        /* Position */
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1rem;
+
+        /* Color */
+        color: var(--Black);
+    }
+
+    .promo-card-alt img {
+        /* Size */
+        width: 24%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .promo-card-alt hr {
+        /* Position */
+        margin: 0.75rem 0 1rem 0;
+
+        /* Color */
+        border-color: var(--Black);
+        opacity: 0.3;
+    }
+
+    /* Responsive - Promo cards */
+    @media (max-width: 767.98px) {
+        .promo-card-alt {
+            flex-direction: column !important;
+            padding: 1.5rem;
+        }
+
+        .promo-card-alt img {
+            width: 100%;
+            max-height: 250px;
+        }
+    }
+
+/*Responsive - Tabs*/
+    @media (max-width: 575.98px) {
+        .menu-tab-btn {
+            padding: 0.75rem 1rem;
+            font-size: 1em;
+        }
+
+        .menu-tabs {
+            padding: 0 2%;
+        }
+
+        .menu-tabs-content {
+            padding: 0 2% 2%;
+        }
+    }
+
+/*Dark Mode Overrides*/
+    :root.dark-mode .menu-tab-btn {
+        background-color: var(--Secondary);
+        color: var(--White);
+    }
+
+    :root.dark-mode .menu-tab-btn:hover {
+        background-color: var(--White);
+        color: var(--Black);
+    }
+
+    :root.dark-mode .menu-tab-btn.active {
+        background-color: var(--Secondary);
+        color: var(--White);
+    }
+
+/*Dark Mode - Drinks Tab*/
+    :root.dark-mode #drinks-items {
+        background-color: var(--Primary);
+    }
+
+    :root.dark-mode #drinks-items h2,
+    :root.dark-mode #drinks-items .Hr_Left {
+        color: var(--Black);
+        border-color: var(--Black);
+    }
+
+    :root.dark-mode #drinks-items .card-title,
+    :root.dark-mode #drinks-items .card-text {
+        color: var(--Black);
+    }
+
+/*Dark Mode - Meals Tab*/
+    :root.dark-mode #meals-items {
+        background-color: var(--Primary);
+    }
+
+    :root.dark-mode #meals-items h2 {
+        color: var(--Black);
+    }
+
+/*Dark Mode - Promos Tab*/
+    :root.dark-mode .menu-tab-pane.promo-items {
+        background-color: var(--Primary);
+    }
+
+    :root.dark-mode .menu-tab-pane.promo-items h2,
+    :root.dark-mode .menu-tab-pane.promo-items p,
+    :root.dark-mode .menu-tab-pane.promo-items h3,
+    :root.dark-mode .menu-tab-pane.promo-items .price {
+        color: var(--Black);
+    }
+
+    :root.dark-mode .promo-card-alt {
+        background-color: var(--Secondary);
+    }
+
+    :root.dark-mode .promo-card-alt hr {
+        border-color: var(--Black);
+        opacity: 0.3;
+    }
