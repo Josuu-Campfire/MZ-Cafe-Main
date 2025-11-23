@@ -404,7 +404,7 @@
             padding-right: 2%;
     
             /* Display */
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/HeroImg.jpg");
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/HeroImg.webp");
             background-size: cover;
             background-position: center center;
         }
@@ -1016,7 +1016,7 @@
             padding-right: 2%;
     
             /* Display */
-            background-image: linear-gradient(to bottom, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), url("/Assets/Imgs/Food1.jpg");
+            background-image: linear-gradient(to bottom, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), url("/Assets/Imgs/Food1.webp");
             background-size: cover;
             background-position: center center;
     
