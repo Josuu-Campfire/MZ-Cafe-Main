@@ -1,3 +1,2 @@
 Todo:
--Menu page
--About page
+-Replace placeholder texts
