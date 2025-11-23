@@ -1016,7 +1016,7 @@
             padding-right: 2%;
     
             /* Display */
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/PromoImg.jpg");
+            background-image: linear-gradient(to bottom, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), url("/Assets/Imgs/Food1.jpg");
             background-size: cover;
             background-position: center center;
     
@@ -1146,6 +1146,70 @@
             background-color: var(--Secondary) !important;
         }
 
+    /* Mobile Portrait - Footer row layout with centered logo */
+        @media (max-width: 991.98px) and (orientation: portrait) {
+            footer .row {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            footer .col-md-6 {
+                flex: 0 1 30%;
+                width: auto;
+                min-width: 0;
+            }
+            footer .col-lg-4 {
+                flex: 0 1 40%;
+                width: auto;
+                min-width: 0;
+            }
+            /* Center the logo */
+            footer .col-md-6.col-lg-4 {
+                flex: 0 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 0;
+            }
+            footer .col-md-6.col-lg-4 a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            footer .col-md-6.text-start {
+                text-align: left !important;
+            }
+            footer .col-md-6.text-end {
+                text-align: right !important;
+            }
+            .Footer_Links {
+                font-size: 0.75em;
+                gap: 0.3rem;
+            }
+            .Footer_Links li {
+                white-space: nowrap;
+            }
+            footer .nav-link {
+                font-size: 0.75em;
+                padding: 0 !important;
+            }
+            footer .icon-text-wrapper {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+            footer i {
+                width: 14px;
+                height: 14px;
+                margin-right: 0 !important;
+            }
+            footer img {
+                height: 50px;
+            }
+        }
+
     /* Mobile Landscape - Footer desktop layout */
         @media (max-width: 991.98px) and (orientation: landscape) {
             footer .row {
@@ -1161,6 +1225,10 @@
             }
             footer .col-md-6.col-lg-4 {
                 flex: 1 1 auto;
+                position: relative;
+                left: auto;
+                transform: none;
+                order: auto;
             }
             .Footer_Links {
                 font-size: 0.95em;

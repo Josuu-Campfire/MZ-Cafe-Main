@@ -1,448 +1,763 @@
 /*MENU PAGE SPECIFIC STYLES*/
-/*Hero Section Overrides*/
-    .Hero_Section {
-        /* Background image - changed for menu page */
-        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
-        transition: background-image 0.5s ease;
-        
-    }
-    /* Hero background changes based on active tab */
-    .Hero_Section.promo-mode {
-        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/SpecialsThumb.jpg");
-    }
-    .Hero_Section.menu-mode {
-        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
-    }
-    .Hero_Section.drinks-mode {
-        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/Food3.jpg");
-    }
-    .Hero_Section.meals-mode {
-        background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/food2.jpg");
-    }
 
-
-/*Carousel Size Reduction*/
-    .drinks-carousel-scroll,
-    .meals-carousel-scroll {
-        /* Padding */
-        padding: 0 4% !important;
-    }
-
-    .drink-card,
-    .meal-card {
-        /* Size reduction */
-        min-height: 200px !important;
-        flex: 0 0 calc(25% - 0.8rem) !important;
-        max-width: calc(25% - 0.8rem) !important;
-    }
-
-    .drink-card .card-img-top,
-    .meal-card .card-img-top {
-        height: 100px !important;
-    }
-
-    .drink-card .card-body,
-    .meal-card .card-body {
-        padding: 0.5rem !important;
-    }
-
-    .drink-card .card-title,
-    .drink-card .card-text,
-    .meal-card .card-title,
-    .meal-card .card-text {
-        font-size: 0.9em;
-    }
-
-    .drink-card .btn-order,
-    .meal-card .btn-order {
-        padding: 0.2rem 0.4rem !important;
-        font-size: 0.8rem !important;
-    }
-
-/*Grid Container for Grid-Based Tabs (Drinks, Meals)*/
-    .menu-grid-container {
-        /* Display */
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 2rem;
-        padding: 2rem 0;
-    }
-
-    .menu-grid-container .drink-card,
-    .menu-grid-container .meal-card {
-        /* Override carousel sizing */
-        flex: none !important;
-        max-width: 100% !important;
-        min-height: 300px !important;
-    }
-
-    .menu-grid-container .drink-card .card-img-top,
-    .menu-grid-container .meal-card .card-img-top {
-        height: 180px !important;
-        object-fit: cover;
-    }
-
-    .menu-grid-container .card-body {
-        padding: 1rem !important;
-    }
-
-    .menu-grid-container .card-title {
-        font-size: 1.1em;
-    }
-
-    .menu-grid-container .card-text {
-        font-size: 0.95em;
-    }
-
-    /* Responsive: 2 columns on tablet */
-    @media (max-width: 991.98px) {
-        .menu-grid-container {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+/*HERO SECTION OVERRIDES*/
+    /*Hero Section Container*/
+        .Hero_Section {
+            /* Background image - changed for menu page */
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
+            transition: background-image 0.5s ease;
         }
-    }
 
-    /* Responsive: 1 column on mobile */
-    @media (max-width: 575.98px) {
+    /*Hero Background Mode Variations*/
+        .Hero_Section.promo-mode {
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/SpecialsThumb.jpg");
+        }
+
+        .Hero_Section.menu-mode {
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
+        }
+
+        .Hero_Section.drinks-mode {
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/Food3.jpg");
+        }
+
+        .Hero_Section.meals-mode {
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/food2.jpg");
+        }
+
+    /*Mobile Portrait - Hero Text Scaling*/
+        @media (max-width: 575.98px) and (orientation: portrait) {
+            .Hero_Text_Area {
+                width: 100%;
+                padding: 80px 15px;
+            }
+
+            .Hero_Text_Area h1 {
+                font-size: 1.8em;
+            }
+
+            .Hero_Text_Area p {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            .Hero_Text_Area .Hr_Left {
+                width: 60px;
+            }
+        }
+
+
+/*CAROUSEL STYLES*/
+    /*Carousel Size Reduction*/
+        .drinks-carousel-scroll,
+        .meals-carousel-scroll {
+            /* Padding */
+            padding: 0 4% !important;
+        }
+
+        .drink-card,
+        .meal-card {
+            /* Size reduction */
+            min-height: 200px !important;
+            flex: 0 0 calc(25% - 0.8rem) !important;
+            max-width: calc(25% - 0.8rem) !important;
+        }
+
+        .drink-card .card-img-top,
+        .meal-card .card-img-top {
+            height: 100px !important;
+        }
+
+        .drink-card .card-body,
+        .meal-card .card-body {
+            padding: 0.5rem !important;
+        }
+
+        .drink-card .card-title,
+        .drink-card .card-text,
+        .meal-card .card-title,
+        .meal-card .card-text {
+            font-size: 0.9em;
+        }
+
+        .drink-card .btn-order,
+        .meal-card .btn-order {
+            padding: 0.2rem 0.4rem !important;
+            font-size: 0.8rem !important;
+        }
+
+    /*Grid Container for Grid-Based Tabs*/
         .menu-grid-container {
-            grid-template-columns: 1fr;
-            gap: 1rem;
+            /* Display */
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
         }
 
         .menu-grid-container .drink-card,
         .menu-grid-container .meal-card {
-            min-height: 250px !important;
+            /* Override carousel sizing */
+            flex: none !important;
+            max-width: 100% !important;
+            min-height: 300px !important;
         }
 
         .menu-grid-container .drink-card .card-img-top,
         .menu-grid-container .meal-card .card-img-top {
-            height: 150px !important;
-        }
-    }
-
-    /* Responsive: 3 cards on medium screens */
-    @media (max-width: 1199.98px) {
-        .drink-card,
-        .meal-card {
-            flex: 0 0 calc(33.333% - 0.8rem) !important;
-            max-width: calc(33.333% - 0.8rem) !important;
-            min-height: 180px !important;
+            height: 180px !important;
+            object-fit: cover;
         }
 
-        .drink-card .card-img-top,
-        .meal-card .card-img-top {
-            height: 80px !important;
-        }
-    }
-
-    /* Responsive: 2 cards on tablet */
-    @media (max-width: 767.98px) {
-        .drink-card,
-        .meal-card {
-            flex: 0 0 calc(50% - 0.8rem) !important;
-            max-width: calc(50% - 0.8rem) !important;
-            min-height: 160px !important;
+        .menu-grid-container .card-body {
+            padding: 1rem !important;
         }
 
-        .drink-card .card-img-top,
-        .meal-card .card-img-top {
-            height: 70px !important;
-        }
-    }
-
-    /* Beverage and Meals section padding reduction */
-    .Beverage_Section,
-    .Meals_Section {
-        padding: 2rem 0 !important;
-    }
-
-    .Beverage_Title,
-    .Meals_Title {
-        padding: 0 4% !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .Beverage_Title h2,
-    .Meals_Title h2 {
-        font-size: 1.8em;
-        margin-bottom: 0.5rem;
-    }
-
-/*Tab Navigation*/
-    .menu-tabs {
-        /* Position */
-        display: flex;
-        gap: 0;
-        padding: 0 4%;
-        margin-bottom: 0;
-        border-bottom: none;
-
-        /* Display */
-        list-style: none;
-    }
-
-    .menu-tab-btn {
-        /* Position */
-        padding: 0.75rem 1.5rem;
-        border: none;
-        background-color: var(--Accent);
-        cursor: pointer;
-        font-size: 1.2em;
-        font-family: Instrument Serif;
-        letter-spacing: 1.5px;
-        margin-right: 0.5rem;
-
-        /* Color */
-        color: var(--Black);
-
-        /* Animation */
-        transition: all 0.3s ease;
-    }
-
-    .menu-tab-btn:hover {
-        /* Color */
-        background-color: var(--Black);
-        color: var(--White);
-    }
-
-    .menu-tab-btn.active {
-        /* Color */
-        background-color: var(--Accent);
-        color: var(--Black);
-    }
-
-/*Tab Content*/
-    .menu-tabs-content {
-        /* Position */
-        padding: 0 4% 4%;
-    }
-
-    .menu-tab-pane {
-        /* Display */
-        display: none;
-    }
-
-    .menu-tab-pane.active {
-        /* Display */
-        display: block;
-    }
-
-/*Menu Tab Content*/
-    .menu-tab-pane.menu-items {
-        /* Display */
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-/*Drinks Tab Content*/
-    #drinks-items {
-        /* Position */
-        padding: 2rem;
-        background-color: var(--Black);
-
-        /* Color */
-    }
-
-    #drinks-items h2 {
-        /* Color */
-        color: var(--White);
-    }
-
-    #drinks-items .Hr_Left {
-        /* Color */
-        border-color: var(--White);
-    }
-
-    #drinks-items .card-title,
-    #drinks-items .card-text {
-        /* Color */
-        color: var(--White);
-    }
-
-/*Meals Tab Content*/
-    #meals-items {
-        /* Position */
-        padding: 2rem;
-        background-color: var(--Black);
-    }
-
-    #meals-items h2 {
-        /* Color */
-        color: var(--White);
-    }
-
-/*Promos Tab Content*/
-    .menu-tab-pane.promo-items {
-        /* Position */
-        padding: 2rem;
-        background-color: var(--Black);
-
-        /* Color */
-        color: var(--White);
-    }
-
-    .menu-tab-pane.promo-items h2 {
-        /* Color */
-        color: var(--White);
-    }
-
-    .menu-tab-pane.promo-items p {
-        /* Color */
-        color: var(--White);
-    }
-
-    /* Promo Cards with alternating layout - using White background for light mode */
-    .promo-card-alt {
-        /* Position */
-        padding: 2rem;
-        margin-bottom: 2rem;
-        background-color: var(--White);
-        border-radius: 8px;
-
-        /* Display */
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .promo-card-alt h3 {
-        /* Position */
-        margin-top: 0;
-        margin-bottom: 1rem;
-
-        /* Color */
-        color: var(--Black);
-
-        /* Typography */
-        font-size: 1.3em;
-    }
-
-    .promo-card-alt p {
-        /* Position */
-        margin: 0.75rem 0;
-
-        /* Color */
-        color: var(--Black);
-
-        /* Typography */
-        font-size: 1em;
-    }
-
-    .promo-card-alt .price {
-        /* Position */
-        font-size: 1.2em;
-        font-weight: bold;
-        margin-top: 1rem;
-
-        /* Color */
-        color: var(--Black);
-    }
-
-    .promo-card-alt img {
-        /* Size */
-        width: 24%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 6px;
-    }
-
-    .promo-card-alt hr {
-        /* Position */
-        margin: 0.75rem 0 1rem 0;
-
-        /* Color */
-        border-color: var(--Black);
-        opacity: 0.3;
-    }
-
-    /* Responsive - Promo cards */
-    @media (max-width: 767.98px) {
-        .promo-card-alt {
-            flex-direction: column !important;
-            padding: 1.5rem;
+        .menu-grid-container .card-title {
+            font-size: 1.1em;
         }
 
-        .promo-card-alt img {
-            width: 100%;
-            max-height: 250px;
-        }
-    }
-
-/*Responsive - Tabs*/
-    @media (max-width: 575.98px) {
-        .menu-tab-btn {
-            padding: 0.75rem 1rem;
-            font-size: 1em;
+        .menu-grid-container .card-text {
+            font-size: 0.95em;
         }
 
+    /*Carousel Responsive*/
+        /* Responsive: 2 columns on tablet */
+        @media (max-width: 991.98px) {
+            .menu-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Responsive: 2 columns on mobile portrait */
+        @media (max-width: 575.98px) {
+            .menu-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .menu-grid-container .drink-card,
+            .menu-grid-container .meal-card {
+                min-height: 250px !important;
+            }
+
+            .menu-grid-container .drink-card .card-img-top,
+            .menu-grid-container .meal-card .card-img-top {
+                height: 150px !important;
+            }
+        }
+
+        /* Responsive: 3 cards on medium screens */
+        @media (max-width: 1199.98px) {
+            .drink-card,
+            .meal-card {
+                flex: 0 0 calc(33.333% - 0.8rem) !important;
+                max-width: calc(33.333% - 0.8rem) !important;
+                min-height: 180px !important;
+            }
+
+            .drink-card .card-img-top,
+            .meal-card .card-img-top {
+                height: 80px !important;
+            }
+        }
+
+        /* Responsive: 2 cards on tablet */
+        @media (max-width: 767.98px) {
+            .drink-card,
+            .meal-card {
+                flex: 0 0 calc(50% - 0.8rem) !important;
+                max-width: calc(50% - 0.8rem) !important;
+                min-height: 160px !important;
+            }
+
+            .drink-card .card-img-top,
+            .meal-card .card-img-top {
+                height: 70px !important;
+            }
+        }
+
+
+/*BEVERAGE AND MEALS SECTIONS*/
+    /*Section Container*/
+        .Beverage_Section,
+        .Meals_Section {
+            padding: 2rem 0 !important;
+        }
+
+    /*Section Title*/
+        .Beverage_Title,
+        .Meals_Title {
+            padding: 0 4% !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .Beverage_Title h2,
+        .Meals_Title h2 {
+            font-size: 1.8em;
+            margin-bottom: 0.5rem;
+        }
+
+
+/*TAB NAVIGATION*/
+    /*Tab Container*/
         .menu-tabs {
-            padding: 0 2%;
+            /* Position */
+            display: flex;
+            gap: 0;
+            padding: 0 4%;
+            margin-bottom: 0;
+            border-bottom: none;
+
+            /* Display */
+            list-style: none;
         }
 
+    /*Tab Buttons*/
+        .menu-tab-btn {
+            /* Position */
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background-color: var(--Accent);
+            cursor: pointer;
+            font-size: 1.2em;
+            font-family: Instrument Serif;
+            letter-spacing: 1.5px;
+            margin-right: 0.5rem;
+
+            /* Color */
+            color: var(--Black);
+
+            /* Animation */
+            transition: all 0.3s ease;
+        }
+
+        .menu-tab-btn:hover {
+            /* Color */
+            background-color: var(--Black);
+            color: var(--White);
+        }
+
+        .menu-tab-btn.active {
+            /* Color */
+            background-color: var(--Accent);
+            color: var(--Black);
+        }
+
+    /*Tab Content Container*/
         .menu-tabs-content {
-            padding: 0 2% 2%;
+            /* Position */
+            padding: 0 4% 4%;
         }
-    }
 
-/*Dark Mode Overrides*/
-    :root.dark-mode .menu-tab-btn {
-        background-color: var(--Secondary);
-        color: var(--White);
-    }
+        .menu-tab-pane {
+            /* Display */
+            display: none;
+        }
 
-    :root.dark-mode .menu-tab-btn:hover {
-        background-color: var(--White);
-        color: var(--Black);
-    }
+        .menu-tab-pane.active {
+            /* Display */
+            display: block;
+        }
 
-    :root.dark-mode .menu-tab-btn.active {
-        background-color: var(--Secondary);
-        color: var(--White);
-    }
+    /*Tab Responsive*/
+        @media (max-width: 575.98px) {
+            .menu-tab-btn {
+                padding: 0.75rem 1rem;
+                font-size: 1em;
+            }
 
-/*Dark Mode - Drinks Tab*/
-    :root.dark-mode #drinks-items {
-        background-color: var(--Primary);
-    }
+            .menu-tabs {
+                padding: 0 2%;
+            }
 
-    :root.dark-mode #drinks-items h2,
-    :root.dark-mode #drinks-items .Hr_Left {
-        color: var(--Black);
-        border-color: var(--Black);
-    }
+            .menu-tabs-content {
+                padding: 0 2% 2%;
+            }
+        }
 
-    :root.dark-mode #drinks-items .card-title,
-    :root.dark-mode #drinks-items .card-text {
-        color: var(--Black);
-    }
+        /* Mobile Landscape - Tab Buttons (equal width and connected) */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .menu-tabs {
+                gap: 0;
+                padding: 0 4%;
+            }
 
-/*Dark Mode - Meals Tab*/
-    :root.dark-mode #meals-items {
-        background-color: var(--Primary);
-    }
+            .menu-tab-btn {
+                flex: 1;
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                margin-right: 0;
+                border-radius: 0;
+            }
 
-    :root.dark-mode #meals-items h2 {
-        color: var(--Black);
-    }
+            .menu-tab-btn:first-child {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
 
-/*Dark Mode - Promos Tab*/
-    :root.dark-mode .menu-tab-pane.promo-items {
-        background-color: var(--Primary);
-    }
+            .menu-tab-btn:last-child {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
 
-    :root.dark-mode .menu-tab-pane.promo-items h2,
-    :root.dark-mode .menu-tab-pane.promo-items p,
-    :root.dark-mode .menu-tab-pane.promo-items h3,
-    :root.dark-mode .menu-tab-pane.promo-items .price {
-        color: var(--Black);
-    }
+    /*Dark Mode - Tab Navigation*/
+        :root.dark-mode .menu-tab-btn {
+            background-color: var(--Secondary);
+            color: var(--White);
+        }
 
-    :root.dark-mode .promo-card-alt {
-        background-color: var(--Secondary);
-    }
+        :root.dark-mode .menu-tab-btn:hover {
+            background-color: var(--White);
+            color: var(--Black);
+        }
 
-    :root.dark-mode .promo-card-alt hr {
-        border-color: var(--Black);
-        opacity: 0.3;
-    }
+        :root.dark-mode .menu-tab-btn.active {
+            background-color: var(--Secondary);
+            color: var(--White);
+        }
+
+
+/*MENU TAB CONTENT*/
+    /*Menu Tab Pane*/
+        .menu-tab-pane.menu-items {
+            /* Display */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+
+/*DRINKS TAB CONTENT*/
+    /*Drinks Tab Container*/
+        #drinks-items {
+            /* Position */
+            padding: 2rem;
+            background-color: var(--bg-color);
+        }
+
+        #drinks-items h2 {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #drinks-items .Hr_Left {
+            /* Color */
+            border-color: var(--text-color);
+        }
+
+        #drinks-items .card-title,
+        #drinks-items .card-text {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #drinks-items .card {
+            /* Light mode - dark cards with readable text */
+            background-color: var(--Accent);
+            color: var(--Black);
+        }
+
+    /*Dark Mode - Drinks Tab*/
+        :root.dark-mode #drinks-items {
+            background-color: var(--Primary);
+        }
+
+        :root.dark-mode #drinks-items h2,
+        :root.dark-mode #drinks-items .Hr_Left {
+            color: var(--Black);
+            border-color: var(--Black);
+        }
+
+        :root.dark-mode #drinks-items .card-title,
+        :root.dark-mode #drinks-items .card-text {
+            color: var(--Black);
+        }
+
+        :root.dark-mode #drinks-items .card {
+            background-color: var(--Secondary);
+            color: var(--White);
+        }
+
+        :root.dark-mode #drinks-items .card-title,
+        :root.dark-mode #drinks-items .card-text {
+            color: var(--White);
+        }
+
+
+/*MEALS TAB CONTENT*/
+    /*Meals Tab Container*/
+        #meals-items {
+            /* Position */
+            padding: 2rem;
+            background-color: var(--bg-color);
+        }
+
+        #meals-items h2 {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #meals-items .Hr_Left {
+            /* Color */
+            border-color: var(--text-color);
+        }
+
+        #meals-items .card-title,
+        #meals-items .card-text {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #meals-items .card {
+            /* Light mode - dark cards with readable text */
+            background-color: var(--Accent);
+            color: var(--Black);
+        }
+
+    /*Dark Mode - Meals Tab*/
+        :root.dark-mode #meals-items {
+            background-color: var(--Primary);
+        }
+
+        :root.dark-mode #meals-items h2 {
+            color: var(--Black);
+        }
+
+        :root.dark-mode #meals-items .Hr_Left {
+            border-color: var(--Black);
+        }
+
+        :root.dark-mode #meals-items .card {
+            background-color: var(--Secondary);
+            color: var(--White);
+        }
+
+        :root.dark-mode #meals-items .card-title,
+        :root.dark-mode #meals-items .card-text {
+            color: var(--White);
+        }
+
+
+/*STARTERS TAB CONTENT*/
+    /*Starters Tab Container*/
+        #starters-items {
+            /* Position */
+            padding: 2rem;
+            background-color: var(--bg-color);
+        }
+
+        #starters-items h2 {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #starters-items .Hr_Left {
+            /* Color */
+            border-color: var(--text-color);
+        }
+
+        #starters-items .card-title,
+        #starters-items .card-text {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #starters-items .card {
+            /* Light mode - dark cards with readable text */
+            background-color: var(--Accent);
+            color: var(--Black);
+        }
+
+    /*Dark Mode - Starters Tab*/
+        :root.dark-mode #starters-items {
+            background-color: var(--Primary);
+        }
+
+        :root.dark-mode #starters-items h2 {
+            color: var(--Black);
+        }
+
+        :root.dark-mode #starters-items .Hr_Left {
+            border-color: var(--Black);
+        }
+
+        :root.dark-mode #starters-items .card {
+            background-color: var(--Secondary);
+            color: var(--White);
+        }
+
+        :root.dark-mode #starters-items .card-title,
+        :root.dark-mode #starters-items .card-text {
+            color: var(--White);
+        }
+
+
+/*PROMOS TAB CONTENT*/
+    /*Promos Tab Container*/
+        #promos-items {
+            /* Position */
+            padding: 2rem 4%;
+            background-color: var(--bg-color);
+        }
+
+        #promos-items h2 {
+            /* Color */
+            color: var(--text-color);
+        }
+
+        #promos-items .Hr_Left {
+            /* Color */
+            border-color: var(--text-color);
+        }
+
+    /*Promo Card Sections*/
+        .promo-card-section {
+            /* Layout */
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: var(--Accent);
+            border-radius: 8px;
+        }
+
+        .promo-card-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .promo-card-img {
+            /* Size */
+            width: 30%;
+            height: auto;
+            min-width: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .promo-card-content {
+            /* Layout */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .promo-card-content h3 {
+            /* Color and Typography */
+            color: var(--Black);
+            font-family: Instrument Serif;
+            font-size: 1.4em;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+    /*Promo Items List*/
+        .promo-size {
+            /* Typography */
+            font-size: 0.75em;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .promo-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            
+            /* Hide scrollbars for all browsers */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+
+            /* Visual indicator - border shadow effect for overflow */
+            position: relative;
+            background: 
+                linear-gradient(to bottom, var(--Accent), var(--Accent)) no-repeat top,
+                linear-gradient(to top, var(--Accent), var(--Accent)) no-repeat bottom;
+            background-size: 100% 20px;
+            background-attachment: local, local;
+            background-position: 0 0, 0 100%;
+        }
+
+        /* Hide scrollbars for Chrome, Safari and Opera */
+        .promo-items-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Top border indicator when scrolled */
+        .promo-items-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--Black), var(--Black));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* Bottom border indicator when more content below */
+        .promo-items-list::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--Black), var(--Black));
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .promo-item {
+            /* Layout */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.8rem;
+            background-color: rgba(var(--Black_RGB), 0.05);
+            border-radius: 4px;
+
+            /* Color */
+            color: var(--Black);
+        }
+
+        .promo-name {
+            /* Typography */
+            font-family: "Microsoft Yi Baiti", serif;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .promo-price {
+            /* Typography */
+            font-family: "Microsoft Yi Baiti", serif;
+            font-size: 0.95em;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-left: 1rem;
+            color: var(--Black);
+        }
+
+    /*Promo Responsive*/
+        /* Mobile Portrait - 2 Column Layout */
+        @media (max-width: 575.98px) and (orientation: portrait) {
+            .promo-items-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .promo-items-list::before,
+            .promo-items-list::after {
+                display: none;
+            }
+
+            .promo-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            .promo-name {
+                font-size: 0.9em;
+            }
+
+            .promo-price {
+                font-size: 0.9em;
+                margin-left: 0;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        /* Responsive: Promo cards on tablet */
+        @media (max-width: 991.98px) {
+            .promo-card-section {
+                flex-direction: column !important;
+                gap: 1.5rem;
+            }
+
+            .promo-card-img {
+                width: 100%;
+                max-height: 250px;
+            }
+
+            .promo-items-list {
+                max-height: none;
+            }
+        }
+
+        /* Responsive: Promo items on smaller screens */
+        @media (max-width: 575.98px) {
+            .promo-card-section {
+                padding: 1.5rem;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .promo-card-content h3 {
+                font-size: 1.2em;
+            }
+        }
+
+    /*Dark Mode - Promos Tab*/
+        :root.dark-mode #promos-items {
+            background-color: var(--Primary);
+        }
+
+        :root.dark-mode #promos-items h2 {
+            color: var(--Black);
+        }
+
+        :root.dark-mode #promos-items .Hr_Left {
+            border-color: var(--Black);
+        }
+
+        :root.dark-mode .promo-card-section {
+            background-color: var(--Secondary);
+        }
+
+        :root.dark-mode .promo-card-content h3 {
+            color: var(--White);
+        }
+
+        :root.dark-mode .promo-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--White);
+        }
+
+        :root.dark-mode .promo-name,
+        :root.dark-mode .promo-price {
+            color: var(--White);
+        }
+
+        /* Dark mode scrollable list styling */
+        :root.dark-mode .promo-items-list {
+            background: 
+                linear-gradient(to bottom, var(--Secondary), var(--Secondary)) no-repeat top,
+                linear-gradient(to top, var(--Secondary), var(--Secondary)) no-repeat bottom;
+            background-size: 100% 20px;
+            background-attachment: local, local;
+            background-position: 0 0, 0 100%;
+        }
+
+        :root.dark-mode .promo-items-list::before {
+            background: linear-gradient(to right, var(--White), var(--White));
+        }
+
+        :root.dark-mode .promo-items-list::after {
+            background: linear-gradient(to right, var(--White), var(--White));
+        }

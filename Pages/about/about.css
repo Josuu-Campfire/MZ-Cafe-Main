@@ -1,0 +1,155 @@
+/*ABOUT PAGE STYLES*/
+
+/*ABOUT SECTION*/
+    /*About Section Container*/
+        .About_Section {
+            /* Position */
+            padding-left: 2%;
+            padding-right: 2%;
+    
+            /* Display */
+            background-image: linear-gradient(to bottom, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 20%), url("/Assets/Imgs/Food1.jpg");
+            background-size: cover;
+            background-position: center center;
+    
+            /* Color */
+            color: var(--White);
+        }
+    /*About Articles*/
+        .Top_Article h1,
+        .Top_Article p,
+        .Botm_Article h1,
+        .Botm_Article p {
+            /* Color */
+            color: var(--White);
+            /* Shadow */
+            text-shadow: 0 4px 12px rgba(var(--Black_RGB), 0.5),
+                         0 8px 20px rgba(var(--Black_RGB), 0.8),
+                         0 2px 6px rgba(var(--Black_RGB), 0.5);
+        }
+        
+        .Top_Article,
+        .Botm_Article {
+            /* Position */
+            width: 100%;
+        }
+        
+        .Top_Article hr,
+        .Botm_Article hr {
+            /* Color */
+            border-color: var(--White);
+        }
+
+/*HERO SECTION - ABOUT PAGE*/
+    /*Hero Section Container - Menu Mode*/
+        .Hero_Section.menu-mode {
+            /* Position */
+            padding-left: 2%;
+            padding-right: 2%;
+    
+            /* Display */
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/AboutImg.jpg");
+            background-size: cover;
+            background-position: center center;
+        }
+        
+        .Hero_Section.menu-mode .Hero_Text_Area {
+            /* Position */
+            padding: 150px 20px;
+            width: 30%;
+    
+            /* Color */
+            color: var(--White);
+        }
+        
+        .Hero_Section.menu-mode .Hero_Text_Area h1,
+        .Hero_Section.menu-mode .Hero_Text_Area p {
+            /* Color */
+            color: var(--White);
+            /* Shadow */
+            text-shadow: 0 4px 12px rgba(var(--Black_RGB), 0.5),
+                         0 8px 20px rgba(var(--Black_RGB), 0.8),
+                         0 2px 6px rgba(var(--Black_RGB), 0.5);
+        }
+        
+        .Hero_Section.menu-mode .Main_Text {
+            /* Position */
+            text-align: center;
+        }
+
+    /*Mobile Portrait - Hero Text Scaling*/
+        @media (max-width: 575.98px) and (orientation: portrait) {
+            .Hero_Text_Area {
+                width: 100%;
+                padding: 80px 15px;
+            }
+
+            .Hero_Text_Area h1 {
+                font-size: 1.8em;
+            }
+
+            .Hero_Text_Area p {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            .Hero_Text_Area .Hr_Left {
+                width: 60px;
+            }
+        }
+
+/*RESPONSIVE ADJUSTMENTS*/
+    /*Mobile Landscape - Hero Section Adjustments*/
+        @media (max-height: 600px) and (orientation: landscape) {
+            .Hero_Section.menu-mode {
+                /* Reduce height on mobile landscape to prevent overlap with content */
+                min-height: 50vh;
+            }
+            .Hero_Section.menu-mode .Hero_Text_Area {
+                /* Reduce padding to fit content better */
+                padding: 40px 15px;
+                width: 40%;
+            }
+        }
+        
+        /* Tablet and smaller screens */
+        @media (max-width: 991.98px) {
+            .Top_Article,
+            .Botm_Article {
+                flex-wrap: wrap !important;
+            }
+            
+            .Top_Article .col-md-4,
+            .Top_Article .col-md-8,
+            .Botm_Article .col-md-4,
+            .Botm_Article .col-md-8 {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Mobile phones */
+        @media (max-width: 575.98px) {
+            .About_Section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .Top_Article,
+            .Botm_Article {
+                padding: 1.5rem 1rem !important;
+            }
+            
+            .Top_Article h1,
+            .Botm_Article h1 {
+                font-size: 200%;
+                letter-spacing: 2.56px;
+            }
+            
+            .Top_Article p,
+            .Botm_Article p {
+                font-size: 120%;
+                line-height: 21.6px;
+            }
+        }

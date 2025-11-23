@@ -15,6 +15,7 @@
         - Media queries for responsiveness
         - Semantic HTML for better accessibility and SEO
         - CSS variables for consistent theming
+        - Javascript usage for theme toggling, active states, and interactivity
 
     Tools Used:
         - Visual Studio Code
@@ -24,6 +25,8 @@
         - https://pixabay.com/ for stock images
         - https://feathericons.com/ for icons
         - https://www.programiz.com/html/online-compiler/ for HTML testing
+        - https://gradienty.codes/ for miscellaneous colors and gradients
+        - https://getbootstrap.com/ for the framework
 
         - Powerpoint for wireframing and prototyping
         - Figma for design
@@ -100,11 +103,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link navbar-theme-text" href="/Pages/menu/menu.html#promo-items"><span class="icon-text-wrapper"><i class="Promos_Ico navbar-theme-icon"></i>Promos</span></a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link navbar-theme-text" href="/Pages/about/index.html"><span class="icon-text-wrapper"><i class="About_Ico navbar-theme-icon"></i>About Us</span></a>
+                        <a class="nav-link navbar-theme-text" href="/Pages/about/about.html"><span class="icon-text-wrapper"><i class="About_Ico navbar-theme-icon"></i>About Us</span></a>
                     </li>
 
                     <li class="nav-item">
@@ -122,6 +121,7 @@
             <h1>MZ Cafe</h1>
             <hr class="Hr_Left">
             <!--Intro Text-->
+            <!-- PLACEHOLDER: Replace with actual introduction text -->
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus harum neque molestias hic!
             </p>
@@ -140,7 +140,6 @@
 
     <!--Spacer-->
     <section class="Spacer">
-        <hr class="Hr_Left">
     </section>
 
     <main>
@@ -158,131 +157,141 @@
         <div class="drinks-carousel-scroll">
             <div class="carousel-scroll-container">
 
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
                 <!-- Drink Card 1 -->
                 <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Hazelnut Latte">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Cafe Americano">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Hazelnut Latte</h5>
-                        <p class="card-text mb-2">Rich espresso with hazelnut syrup</p>
+                        <h5 class="card-title">Cafe Americano</h5>
+                        <p class="card-text mb-2">Rich and bold espresso with hot water</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱120</span>
+                            <span class="fw-bold">₱59</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
                 <!-- Drink Card 2 -->
+                <div class="card drink-card">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Cafe Latte">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cafe Latte</h5>
+                        <p class="card-text mb-2">Smooth espresso with creamy steamed milk</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">₱69</span>
+                            <a href="#" class="btn btn-sm btn-order">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
+                <!-- Drink Card 3 -->
+                <div class="card drink-card">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Cappuccino">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cappuccino</h5>
+                        <p class="card-text mb-2">Perfect blend of espresso, steamed milk and foam</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">₱69</span>
+                            <a href="#" class="btn btn-sm btn-order">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
+                <!-- Drink Card 4 -->
+                <div class="card drink-card">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Caramel Macchiato">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Caramel Macchiato</h5>
+                        <p class="card-text mb-2">Espresso with velvety milk and caramel</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">₱79</span>
+                            <a href="#" class="btn btn-sm btn-order">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
+                <!-- Drink Card 5 -->
+                <div class="card drink-card">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Spanish Latte">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Spanish Latte</h5>
+                        <p class="card-text mb-2">Latte with a delightful Spanish twist</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">₱79</span>
+                            <a href="#" class="btn btn-sm btn-order">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
+                <!-- Drink Card 6 -->
+                <div class="card drink-card">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Cold Brew">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cold Brew</h5>
+                        <p class="card-text mb-2">Smooth and refreshing cold-steeped coffee</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">₱59 / ₱69</span>
+                            <a href="#" class="btn btn-sm btn-order">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
+                <!-- Drink Card 7 -->
+                <div class="card drink-card">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Iced Latte">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Iced Latte</h5>
+                        <p class="card-text mb-2">Creamy espresso over ice</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">₱69 / ₱79</span>
+                            <a href="#" class="btn btn-sm btn-order">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
+                <!-- Drink Card 8 -->
                 <div class="card drink-card">
                     <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Iced Mocha">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Iced Mocha</h5>
                         <p class="card-text mb-2">Chocolate and espresso over ice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱140</span>
+                            <span class="fw-bold">₱79 / ₱89</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Drink Card 3 -->
-                <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Caramel Macchiato">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Caramel Macchiato</h5>
-                        <p class="card-text mb-2">Velvety milk with caramel drizzle</p>
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱150</span>
-                            <a href="#" class="btn btn-sm btn-order">Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Drink Card 4 -->
-                <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Matcha Frappe">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Matcha Frappe</h5>
-                        <p class="card-text mb-2">Creamy matcha blended with ice</p>
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱160</span>
-                            <a href="#" class="btn btn-sm btn-order">Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Drink Card 5 -->
-                <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Vanilla Cold Brew">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Vanilla Cold Brew</h5>
-                        <p class="card-text mb-2">Smooth cold brew with vanilla notes</p>
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱130</span>
-                            <a href="#" class="btn btn-sm btn-order">Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Drink Card 6 -->
-                <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Cinnamon Cappuccino">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Cinnamon Cappuccino</h5>
-                        <p class="card-text mb-2">Frothy cappuccino with cinnamon dust</p>
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱125</span>
-                            <a href="#" class="btn btn-sm btn-order">Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Drink Card 7 -->
-                <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Espresso Shot">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Espresso Shot</h5>
-                        <p class="card-text mb-2">Classic single/double shot</p>
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱80</span>
-                            <a href="#" class="btn btn-sm btn-order">Order</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Drink Card 8 -->
-                <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Chai Latte">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Chai Latte</h5>
-                        <p class="card-text mb-2">Spiced tea blended with milk</p>
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱135</span>
-                            <a href="#" class="btn btn-sm btn-order">Order</a>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
                 <!-- Drink Card 9 -->
                 <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Coconut Iced Coffee">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Ice Matcha Latte">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Coconut Iced Coffee</h5>
-                        <p class="card-text mb-2">Tropical coconut and cold brew</p>
+                        <h5 class="card-title">Ice Matcha Latte</h5>
+                        <p class="card-text mb-2">Creamy matcha over ice with milk</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱150</span>
+                            <span class="fw-bold">₱79 / ₱89</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Drink item - Replace name, description, and price -->
                 <!-- Drink Card 10 -->
                 <div class="card drink-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Salted Caramel Frappe">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Sea Salt Latte">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Salted Caramel Frappe</h5>
-                        <p class="card-text mb-2">Sweet and salty blended treat</p>
+                        <h5 class="card-title">Sea Salt Latte</h5>
+                        <p class="card-text mb-2">Latte with a hint of sea salt</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱170</span>
+                            <span class="fw-bold">₱79 / ₱89</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
@@ -310,6 +319,7 @@
             <article class="Product_Article d-flex flex-column p-4 gap-5 align-items-stretch w-100">
 
                 <!--Menu-->
+                <!-- PLACEHOLDER: Replace with actual menu section content -->
                 <div class="Product_Text_Area d-flex flex-row align-items-center gap-5">
                     <!--Menu Thumbnail-->
                     <img src="Assets/Textures/Placeholder.png" alt="Placeholder Image"
@@ -321,14 +331,16 @@
                             <h1>Our Menu</h1>
                             <hr class="Hr_Left">
                             <!--Menu Description-->
+                            <!-- PLACEHOLDER: Replace with actual menu description -->
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Explore our diverse selection of hot and iced coffee, refreshing beverages, hearty Filipino and international meals, and appetizing starters. Quality ingredients and exceptional taste in every bite.
                             </p>
                         </div>
                     </a>
                 </div>
 
                 <!--Promos-->
+                <!-- PLACEHOLDER: Replace with actual promos section content -->
                 <div class="Product_Text_Area d-flex flex-row-reverse align-items-center gap-5 text-end">
                     <!--Promo Thumbnail-->
                     <img src="Assets/Textures/Placeholder.png" alt="Placeholder Image"
@@ -340,8 +352,9 @@
                             <h1>Our Promos</h1>
                             <hr class="Hr_Right">
                             <!--Promo Description-->
+                            <!-- PLACEHOLDER: Replace with actual promo description -->
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Check out our special promotions and featured items. From signature frappes to best-selling mains, discover great value and taste at MZ Cafe.
                             </p>
                         </div>
                     </a>
@@ -404,131 +417,141 @@
         <div class="meals-carousel-scroll">
             <div class="carousel-scroll-container">
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 1 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Classic Burger">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Nuggets w/ Egg">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Classic Burger</h5>
-                        <p class="card-text mb-2">Juicy beef patty with fresh toppings</p>
+                        <h5 class="card-title">Nuggets w/ Egg</h5>
+                        <p class="card-text mb-2">Crispy nuggets served with egg and rice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱250</span>
+                            <span class="fw-bold">₱75</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 2 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Caesar Salad">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Chicken Ala King">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Caesar Salad</h5>
-                        <p class="card-text mb-2">Crispy greens with parmesan and croutons</p>
+                        <h5 class="card-title">Chicken Ala King</h5>
+                        <p class="card-text mb-2">Tender chicken in creamy rich sauce</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱180</span>
+                            <span class="fw-bold">₱85</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 3 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Grilled Chicken Sandwich">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Burger Steak">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Grilled Chicken Sandwich</h5>
-                        <p class="card-text mb-2">Tender chicken with herbs and veggies</p>
+                        <h5 class="card-title">Burger Steak</h5>
+                        <p class="card-text mb-2">Savory beef burger steak with gravy</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱220</span>
+                            <span class="fw-bold">₱75</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 4 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Pasta Carbonara">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Fish Fillet">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Pasta Carbonara</h5>
-                        <p class="card-text mb-2">Creamy sauce with bacon and cheese</p>
+                        <h5 class="card-title">Fish Fillet</h5>
+                        <p class="card-text mb-2">Crispy fish fillet with rice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱280</span>
+                            <span class="fw-bold">₱75</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 5 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Fish and Chips">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="MZ Fried Chicken">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Fish and Chips</h5>
-                        <p class="card-text mb-2">Crispy battered fish with golden fries</p>
+                        <h5 class="card-title">MZ Fried Chicken</h5>
+                        <p class="card-text mb-2">Crispy fried chicken with rice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱240</span>
+                            <span class="fw-bold">₱75</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 6 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Steak Plate">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Cordon Bleu">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Steak Plate</h5>
-                        <p class="card-text mb-2">Premium cut with seasonal vegetables</p>
+                        <h5 class="card-title">Cordon Bleu</h5>
+                        <p class="card-text mb-2">Stuffed chicken breast with ham and cheese</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱450</span>
+                            <span class="fw-bold">₱99</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 7 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Chicken Fried Rice">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Chicken Wings">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Chicken Fried Rice</h5>
-                        <p class="card-text mb-2">Fluffy rice with tender chicken pieces</p>
+                        <h5 class="card-title">Chicken Wings</h5>
+                        <p class="card-text mb-2">Buffalo, honey garlic, salted egg, sweet chili oil</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱200</span>
+                            <span class="fw-bold">₱85</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 8 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Vegetable Pizza">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Bacon w/ Egg">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Vegetable Pizza</h5>
-                        <p class="card-text mb-2">Fresh veggies on a crispy crust</p>
+                        <h5 class="card-title">Bacon w/ Egg</h5>
+                        <p class="card-text mb-2">Crispy bacon with egg and rice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱320</span>
+                            <span class="fw-bold">₱75</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 9 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="BBQ Ribs">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Longanisa w/ Egg">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">BBQ Ribs</h5>
-                        <p class="card-text mb-2">Smoky ribs with tangy sauce</p>
+                        <h5 class="card-title">Longanisa w/ Egg</h5>
+                        <p class="card-text mb-2">Philippine sausage with egg and rice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱380</span>
+                            <span class="fw-bold">₱69</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- PLACEHOLDER: Meal item - Replace name, description, and price -->
                 <!-- Meal Card 10 -->
                 <div class="card meal-card">
-                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Shrimp Tempura">
+                    <img src="Assets/Textures/Placeholder.png" class="card-img-top" alt="Hotdog w/ Egg">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Shrimp Tempura</h5>
-                        <p class="card-text mb-2">Light and crispy battered shrimp</p>
+                        <h5 class="card-title">Hotdog w/ Egg</h5>
+                        <p class="card-text mb-2">Hotdog with egg and rice</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
-                            <span class="fw-bold">₱350</span>
+                            <span class="fw-bold">₱69</span>
                             <a href="#" class="btn btn-sm btn-order">Order</a>
                         </div>
                     </div>
@@ -561,6 +584,7 @@
             <div class="col-md-8">
                 <h1>MZ Cafe</h1>
                 <hr class="Hr_Left">
+                <!-- PLACEHOLDER: Replace with actual cafe description -->
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt esse libero dicta in quo aut sed,
                     commodi expedita fuga magni quas incidunt vel? Vero eaque sunt iusto veritatis amet sapiente!
@@ -581,6 +605,7 @@
             <div class="col-md-4">
                 <h1>Our Story</h1>
                 <hr class="Hr_Left">
+                <!-- PLACEHOLDER: Replace with actual story content -->
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta laborum placeat temporibus
                     obcaecati. Eligendi quaerat cupiditate asperiores fugiat mollitia, iste consectetur et corporis,
@@ -607,7 +632,7 @@
 
 
     <!--Footer-->
-    <footer class="bg-dark py-4 footer_color">
+    <footer class="bg-dark py-4">
 
         <hr>
 
@@ -658,30 +683,21 @@
                     </ul>
                 </div>
 
-                <!--Logo-->
-                <a href="/" class="col-md-6 col-lg-4 text-center">
-                    <img src="/Assets/Textures/LogoMZCafe White.svg" alt="MZ Cafe Logo" height="80">
-                </a>
-
                 <!--Navigation-->
                 <div class="col-md-6 col-lg-4 text-end">
 
                     <ul class="Footer_Links list-unstyled gap-3 end-0">
 
                         <li class="nav-item">
-                            <a class="nav-link footer-theme-text" href="#home"><span class="icon-text-wrapper"><i class="Home_Ico footer-theme-icon"></i>Home</span></a>
+                            <a class="nav-link footer-theme-text" href="/index.html"><span class="icon-text-wrapper"><i class="Home_Ico footer-theme-icon"></i>Home</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link footer-theme-text" href="#menu"><span class="icon-text-wrapper"><i class="Menu_Ico footer-theme-icon"></i>Menu</span></a>
+                            <a class="nav-link footer-theme-text" href="/Pages/menu/menu.html"><span class="icon-text-wrapper"><i class="Menu_Ico footer-theme-icon"></i>Menu</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link footer-theme-text" href="#promos"><span class="icon-text-wrapper"><i class="Promos_Ico footer-theme-icon"></i>Promos</span></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link footer-theme-text" href="#about"><span class="icon-text-wrapper"><i class="About_Ico footer-theme-icon"></i>About Us</span></a>
+                            <a class="nav-link footer-theme-text" href="/Pages/about/about.html"><span class="icon-text-wrapper"><i class="About_Ico footer-theme-icon"></i>About Us</span></a>
                         </li>
 
                         <li class="nav-item">
