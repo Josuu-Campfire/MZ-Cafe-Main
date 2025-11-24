@@ -1,0 +1,153 @@
+<!-- NAVBAR COMPONENT -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+        <!--Logo Wrapper-->
+        <div class="navbar-brand-wrapper">
+            <!--Logo-->
+            <a class="navbar-brand navbar-theme-text" href="/index.html">
+                <img src="/Assets/Textures/LogoMZCafe White.svg" alt="MZ Cafe Logo" height="80">
+            </a>
+        </div>
+
+        <!--Mobile Toggle-->
+        <button class="navbar-toggler custom-dropdown-toggle" id="mobileMenuToggle" type="button"
+            aria-label="Toggle navigation menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--Links-->
+        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+            <ul class="navbar-nav ms-auto me-3 flex-column flex-lg-row">
+                <li class="nav-item">
+                    <a class="nav-link navbar-theme-text" href="/index.html"><span class="icon-text-wrapper"><i
+                                class="Home_Ico navbar-theme-icon"></i><span class="nav-text">Home</span></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link navbar-theme-text" href="/Pages/menu/menu.html"><span
+                            class="icon-text-wrapper"><i class="Menu_Ico navbar-theme-icon"></i><span class="nav-text">Menu</span></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link navbar-theme-text" href="/Pages/about/about.html"><span
+                            class="icon-text-wrapper"><i class="About_Ico navbar-theme-icon"></i><span class="nav-text">About Us</span></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link navbar-theme-text" href="/index.html#delivery"><span
+                            class="icon-text-wrapper"><i class="Delivery_Ico navbar-theme-icon"></i><span class="nav-text">Order
+                            Online</span></span></a>
+                </li>
+
+                <!--Theme Toggle - Now in the nav list-->
+                <li class="nav-item theme-toggle-item d-lg-none">
+                    <button class="Theme_Toggle w-100 text-start ps-3" id="themeToggleMobile" aria-label="Toggle dark mode">
+                        <i class="Light_Ico navbar-theme-icon" id="lightIconMobile"></i>
+                        <i class="Dark_Ico navbar-theme-icon" id="darkIconMobile" style="display: none;"></i>
+                    </button>
+                </li>
+
+                <!--Theme Toggle - Desktop in nav list-->
+                <li class="nav-item theme-toggle-item d-none d-lg-flex">
+                    <button class="Theme_Toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="Light_Ico navbar-theme-icon" id="lightIcon"></i>
+                        <i class="Dark_Ico navbar-theme-icon" id="darkIcon" style="display: none;"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- FOOTER COMPONENT -->
+<footer class="bg-dark py-4">
+
+    <hr>
+
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-between">
+
+            <!--Links-->
+            <div class="col-md-6 col-lg-4 text-start">
+                <ul class="Footer_Links list-unstyled gap-3 start-0">
+
+                    <!--Instagram-->
+                    <li class="nav-item">
+                        <a href="https://www.instagram.com/mz_cafee" target="_blank" rel="noopener noreferrer"
+                            class="nav-link footer-theme-text">
+                            <span class="icon-text-wrapper"><i
+                                    class="Instagram_Ico footer-theme-icon"></i>Instagram</span>
+                        </a>
+                    </li>
+
+                    <!--Facebook-->
+                    <li class="nav-item">
+                        <a href="https://web.facebook.com/mzcafe" target="_blank" rel="noopener noreferrer"
+                            class="nav-link footer-theme-text">
+                            <span class="icon-text-wrapper"><i
+                                    class="Facebook_Ico footer-theme-icon"></i>Facebook</span>
+                        </a>
+                    </li>
+
+                    <!--Location-->
+                    <li class="nav-item">
+                        <a href="" target="_blank" rel="noopener noreferrer" class="nav-link footer-theme-text">
+                            <span class="icon-text-wrapper"><i
+                                    class="Location_Ico footer-theme-icon"></i>Location</span>
+                        </a>
+                    </li>
+
+                    <!--Email-->
+                    <li class="nav-item">
+                        <a href="mailto:zaldymangaliag.ge2018@gmail.com" class="nav-link footer-theme-text">
+                            <span class="icon-text-wrapper"><i
+                                    class="Email_Ico footer-theme-icon"></i>zaldymangaliag.ge2018@gmail.com</span>
+                        </a>
+                    </li>
+
+                    <!--Contact No-->
+                    <li class="nav-item">
+                        <a href="tel:09665935615" class="nav-link footer-theme-text">
+                            <span class="icon-text-wrapper"><i class="Phone_Ico footer-theme-icon"></i>0966 593
+                                561</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!--Navigation-->
+            <div class="col-md-6 col-lg-4 text-end">
+
+                <ul class="Footer_Links list-unstyled gap-3 end-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link footer-theme-text" href="/index.html"><span class="icon-text-wrapper"><i
+                                    class="Home_Ico footer-theme-icon"></i>Home</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link footer-theme-text" href="/Pages/menu/menu.html"><span
+                                class="icon-text-wrapper"><i class="Menu_Ico footer-theme-icon"></i>Menu</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link footer-theme-text" href="/Pages/about/about.html"><span
+                                class="icon-text-wrapper"><i class="About_Ico footer-theme-icon"></i>About
+                                Us</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link footer-theme-text" href="/index.html#delivery"><span
+                                class="icon-text-wrapper"><i class="Delivery_Ico footer-theme-icon"></i>Order
+                                Online</span></a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+</footer>

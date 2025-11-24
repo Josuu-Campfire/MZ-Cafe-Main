@@ -1,44 +1,137 @@
 /*MENU PAGE SPECIFIC STYLES*/
 
+/* Page Load Animation Keyframes */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menu Component Animations */
+.Hero_Section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.menu-tabs {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.menu-tab-pane {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.menu-grid-container {
+    animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.menu-grid-container .card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.menu-grid-container .card:nth-child(1) {
+    animation-delay: 0.45s;
+}
+
+.menu-grid-container .card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.menu-grid-container .card:nth-child(3) {
+    animation-delay: 0.55s;
+}
+
+.menu-grid-container .card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.menu-grid-container .card:nth-child(n+5) {
+    animation-delay: 0.65s;
+}
+
 /*HERO SECTION OVERRIDES*/
     /*Hero Section Container*/
         .Hero_Section {
-            /* Background image - changed for menu page */
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.webp");
             transition: background-image 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .Hero_Section .Hero_Text_Area {
+            padding: 60px 40px;
+            width: 80%;
+            max-width: 600px;
+            background: rgba(var(--Black_RGB), 0.3);
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
         }
 
     /*Hero Background Mode Variations*/
         .Hero_Section.promo-mode {
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/SpecialsThumb.jpg");
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/SpecialsThumb.webp");
         }
 
         .Hero_Section.menu-mode {
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.jpg");
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/MenuThumb.webp");
         }
 
         .Hero_Section.drinks-mode {
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/Food3.jpg");
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/Food3.webp");
         }
 
         .Hero_Section.meals-mode {
-            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/food2.jpg");
+            background-image: linear-gradient(to top, var(--bg-color) 0%, rgba(254, 251, 247, 0) 60%), url("/Assets/Imgs/food2.webp");
         }
 
     /*Mobile Portrait - Hero Text Scaling*/
         @media (max-width: 575.98px) and (orientation: portrait) {
+            .Hero_Section {
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                padding-top: 0.5rem !important;
+            }
             .Hero_Text_Area {
-                width: 100%;
-                padding: 80px 15px;
+                width: 100% !important;
+                padding: 20px 15px;
+                margin: 0 !important;
+                position: relative !important;
             }
 
             .Hero_Text_Area h1 {
                 font-size: 1.8em;
+                margin: 0.3rem 0;
             }
 
             .Hero_Text_Area p {
                 font-size: 0.9em;
                 line-height: 1.4;
+                margin: 0.3rem 0;
             }
 
             .Hero_Text_Area .Hr_Left {
@@ -51,13 +144,11 @@
     /*Carousel Size Reduction*/
         .drinks-carousel-scroll,
         .meals-carousel-scroll {
-            /* Padding */
             padding: 0 4% !important;
         }
 
         .drink-card,
         .meal-card {
-            /* Size reduction */
             min-height: 200px !important;
             flex: 0 0 calc(25% - 0.8rem) !important;
             max-width: calc(25% - 0.8rem) !important;
@@ -88,37 +179,38 @@
 
     /*Grid Container for Grid-Based Tabs*/
         .menu-grid-container {
-            /* Display */
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
             padding: 2rem 0;
         }
 
         .menu-grid-container .drink-card,
         .menu-grid-container .meal-card {
-            /* Override carousel sizing */
             flex: none !important;
             max-width: 100% !important;
-            min-height: 300px !important;
+            min-height: 200px !important;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .menu-grid-container .drink-card .card-img-top,
         .menu-grid-container .meal-card .card-img-top {
-            height: 180px !important;
+            height: 100px !important;
             object-fit: cover;
+            border-radius: 12px 12px 0 0;
         }
 
         .menu-grid-container .card-body {
-            padding: 1rem !important;
+            padding: 0.75rem !important;
         }
 
         .menu-grid-container .card-title {
-            font-size: 1.1em;
+            font-size: 0.95em;
         }
 
         .menu-grid-container .card-text {
-            font-size: 0.95em;
+            font-size: 0.85em;
         }
 
     /*Carousel Responsive*/
@@ -126,7 +218,7 @@
         @media (max-width: 991.98px) {
             .menu-grid-container {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
+                gap: 1rem;
             }
         }
 
@@ -203,73 +295,82 @@
 /*TAB NAVIGATION*/
     /*Tab Container*/
         .menu-tabs {
-            /* Position */
             display: flex;
             gap: 0;
             padding: 0 4%;
             margin-bottom: 0;
             border-bottom: none;
-
-            /* Display */
             list-style: none;
         }
 
     /*Tab Buttons*/
         .menu-tab-btn {
-            /* Position */
             padding: 0.75rem 1.5rem;
             border: none;
-            background-color: var(--Accent);
+            background: rgba(var(--Black_RGB), 0.3);
+            backdrop-filter: blur(4px);
             cursor: pointer;
             font-size: 1.2em;
             font-family: Instrument Serif;
             letter-spacing: 1.5px;
             margin-right: 0.5rem;
-
-            /* Color */
             color: var(--Black);
-
-            /* Animation */
             transition: all 0.3s ease;
+            border-radius: 8px 8px 0 0;
+            white-space: nowrap;
         }
 
         .menu-tab-btn:hover {
-            /* Color */
             background-color: var(--Black);
             color: var(--White);
         }
 
         .menu-tab-btn.active {
-            /* Color */
-            background-color: var(--Accent);
+            background: rgba(var(--Black_RGB), 0.3);
+            backdrop-filter: blur(4px);
             color: var(--Black);
         }
 
     /*Tab Content Container*/
         .menu-tabs-content {
-            /* Position */
             padding: 0 4% 4%;
+            border-radius: 0 0 8px 8px;
+            background-image: url("/Assets/Textures/TabsBG.webp");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background: rgba(var(--Black_RGB), 0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 0 8px 8px 8px;
         }
 
         .menu-tab-pane {
-            /* Display */
             display: none;
         }
 
         .menu-tab-pane.active {
-            /* Display */
             display: block;
         }
 
     /*Tab Responsive*/
         @media (max-width: 575.98px) {
-            .menu-tab-btn {
-                padding: 0.75rem 1rem;
-                font-size: 1em;
+            .menu-tabs {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding: 0 2%;
+                margin-bottom: 0;
             }
 
-            .menu-tabs {
-                padding: 0 2%;
+            .menu-tab-btn {
+                flex: 1 1 calc(50% - 0.25rem);
+                min-width: 0;
+                padding: 0.75rem 0.5rem;
+                font-size: 0.9em;
+                margin-right: 0;
+                border-radius: 8px 8px 0 0;
+                white-space: normal;
+                text-align: center;
             }
 
             .menu-tabs-content {
@@ -289,23 +390,14 @@
                 padding: 0.75rem 1rem;
                 font-size: 1rem;
                 margin-right: 0;
-                border-radius: 0;
-            }
-
-            .menu-tab-btn:first-child {
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-            }
-
-            .menu-tab-btn:last-child {
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
+                border-radius: 8px 8px 0 0;
             }
         }
 
     /*Dark Mode - Tab Navigation*/
         :root.dark-mode .menu-tab-btn {
-            background-color: var(--Secondary);
+            background: rgba(var(--Black_RGB), 0.3);
+            backdrop-filter: blur(4px);
             color: var(--White);
         }
 
@@ -315,13 +407,30 @@
         }
 
         :root.dark-mode .menu-tab-btn.active {
-            background-color: var(--Secondary);
+            background: rgba(var(--Black_RGB), 0.3);
+            backdrop-filter: blur(4px);
             color: var(--White);
+        }
+
+        :root.dark-mode .menu-tabs-content {
+            background-image: url("/Assets/Textures/TabsBG.webp");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(238, 183, 107, 0.2);
+            backdrop-filter: blur(4px);
         }
 
 
 /*MENU TAB CONTENT*/
     /*Menu Tab Pane*/
+        .menu-tab-pane {
+            background: rgba(var(--Black_RGB), 0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 0 8px 8px 8px;
+            margin: 0 4% 2rem 4%;
+        }
+
         .menu-tab-pane.menu-items {
             /* Display */
             display: flex;
@@ -335,7 +444,7 @@
         #drinks-items {
             /* Position */
             padding: 2rem;
-            background-color: var(--bg-color);
+            background: transparent;
         }
 
         #drinks-items h2 {
@@ -356,13 +465,13 @@
 
         #drinks-items .card {
             /* Light mode - dark cards with readable text */
-            background-color: var(--Accent);
+            background: var(--Accent);
             color: var(--Black);
         }
 
     /*Dark Mode - Drinks Tab*/
         :root.dark-mode #drinks-items {
-            background-color: var(--Primary);
+            background: transparent;
         }
 
         :root.dark-mode #drinks-items h2,
@@ -377,7 +486,7 @@
         }
 
         :root.dark-mode #drinks-items .card {
-            background-color: var(--Secondary);
+            background: var(--Secondary);
             color: var(--White);
         }
 
@@ -392,7 +501,7 @@
         #meals-items {
             /* Position */
             padding: 2rem;
-            background-color: var(--bg-color);
+            background: transparent;
         }
 
         #meals-items h2 {
@@ -413,13 +522,13 @@
 
         #meals-items .card {
             /* Light mode - dark cards with readable text */
-            background-color: var(--Accent);
+            background: var(--Accent);
             color: var(--Black);
         }
 
     /*Dark Mode - Meals Tab*/
         :root.dark-mode #meals-items {
-            background-color: var(--Primary);
+            background: transparent;
         }
 
         :root.dark-mode #meals-items h2 {
@@ -431,7 +540,7 @@
         }
 
         :root.dark-mode #meals-items .card {
-            background-color: var(--Secondary);
+            background: var(--Secondary);
             color: var(--White);
         }
 
@@ -446,7 +555,7 @@
         #starters-items {
             /* Position */
             padding: 2rem;
-            background-color: var(--bg-color);
+            background: transparent;
         }
 
         #starters-items h2 {
@@ -467,13 +576,13 @@
 
         #starters-items .card {
             /* Light mode - dark cards with readable text */
-            background-color: var(--Accent);
+            background: var(--Accent);
             color: var(--Black);
         }
 
     /*Dark Mode - Starters Tab*/
         :root.dark-mode #starters-items {
-            background-color: var(--Primary);
+            background: transparent;
         }
 
         :root.dark-mode #starters-items h2 {
@@ -485,7 +594,7 @@
         }
 
         :root.dark-mode #starters-items .card {
-            background-color: var(--Secondary);
+            background: var(--Secondary);
             color: var(--White);
         }
 
@@ -500,7 +609,7 @@
         #promos-items {
             /* Position */
             padding: 2rem 4%;
-            background-color: var(--bg-color);
+            background: transparent;
         }
 
         #promos-items h2 {
@@ -521,8 +630,7 @@
             gap: 2rem;
             margin-bottom: 3rem;
             padding: 2rem;
-            background-color: var(--Accent);
-            border-radius: 8px;
+            background: var(--Accent);
         }
 
         .promo-card-section.reverse {
@@ -625,8 +733,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.5rem 0.8rem;
-            background-color: rgba(var(--Black_RGB), 0.05);
-            border-radius: 4px;
+            background: rgba(var(--Black_RGB), 0.05);
 
             /* Color */
             color: var(--Black);
@@ -715,7 +822,12 @@
 
     /*Dark Mode - Promos Tab*/
         :root.dark-mode #promos-items {
-            background-color: var(--Primary);
+            background: transparent;
+        }
+
+        :root.dark-mode .menu-tab-pane {
+            background: rgba(var(--Black_RGB), 0.2);
+            backdrop-filter: blur(4px);
         }
 
         :root.dark-mode #promos-items h2 {
@@ -727,7 +839,7 @@
         }
 
         :root.dark-mode .promo-card-section {
-            background-color: var(--Secondary);
+            background: var(--Secondary);
         }
 
         :root.dark-mode .promo-card-content h3 {
@@ -735,7 +847,7 @@
         }
 
         :root.dark-mode .promo-item {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: var(--White);
         }
 

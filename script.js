@@ -1,35 +1,107 @@
-// Bootstrap handles the navbar toggle automatically
-// This script is reserved for additional custom functionality
+// Load navbar and footer from components.html
+function loadComponents() {
+    fetch('/components.html')
+        .then(response => response.text())
+        .then(html => {
+            // Parse the HTML to extract navbar and footer
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            const navbar = doc.querySelector('nav');
+            const footer = doc.querySelector('footer');
+            
+            // Insert navbar at the beginning of body
+            if (navbar) {
+                document.body.insertBefore(navbar, document.body.firstChild);
+            }
+            
+            // Insert footer at the end of body
+            if (footer) {
+                document.body.appendChild(footer);
+            }
+            
+            // Re-initialize mobile menu functionality
+            setupMobileMenu();
+            
+            // Re-initialize theme functionality
+            initializeTheme();
+            toggleThemeListeners();
+            
+            // Re-initialize active page indicator
+            updateActiveLink();
+        })
+        .catch(error => console.error('Error loading components:', error));
+}
 
-// Close navbar when a link is clicked on mobile
-document.querySelectorAll('.navbar-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        const navbarToggle = document.querySelector('.navbar-toggler');
-        const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
-        
-        if (isExpanded) {
-            navbarToggle.click();
-        }
+// Setup mobile menu functionality
+function setupMobileMenu() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenuDropdown = document.getElementById('mobileMenuDropdown');
+
+    if (mobileMenuToggle && mobileMenuDropdown) {
+        // Toggle dropdown when button is clicked
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when a link is clicked
+        document.querySelectorAll('.mobile-menu-dropdown .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuDropdown.classList.remove('active');
+            });
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar') && !e.target.closest('#mobileMenuToggle')) {
+                mobileMenuDropdown.classList.remove('active');
+            }
+        });
+    }
+}
+
+// Check if this is a subpage (not index.html)
+const isSubpage = window.location.pathname.includes('/Pages/');
+
+// Load components if on a subpage, otherwise navbar/footer are already in the HTML
+if (isSubpage) {
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponents();
+        // Initialize theme listeners after DOM is ready
+        setTimeout(toggleThemeListeners, 100);
     });
-});
+} else {
+    // For index.html, just setup the mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+        setupMobileMenu();
+        initializeTheme();
+        toggleThemeListeners();
+    });
+}
 
 // Dark Mode Toggle
-const themeToggle = document.getElementById('themeToggle');
-const lightIcon = document.getElementById('lightIcon');
-const darkIcon = document.getElementById('darkIcon');
 const htmlElement = document.documentElement;
 
 // Load saved theme preference from localStorage
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
+    const lightIcon = document.getElementById('lightIcon');
+    const darkIcon = document.getElementById('darkIcon');
+    const lightIconMobile = document.getElementById('lightIconMobile');
+    const darkIconMobile = document.getElementById('darkIconMobile');
+    
     if (savedTheme === 'dark') {
         htmlElement.classList.add('dark-mode');
-        lightIcon.style.display = 'none';
-        darkIcon.style.display = 'inline-block';
+        if (lightIcon) lightIcon.style.display = 'none';
+        if (darkIcon) darkIcon.style.display = 'inline-block';
+        if (lightIconMobile) lightIconMobile.style.display = 'none';
+        if (darkIconMobile) darkIconMobile.style.display = 'inline-block';
     } else {
         htmlElement.classList.remove('dark-mode');
-        lightIcon.style.display = 'inline-block';
-        darkIcon.style.display = 'none';
+        if (lightIcon) lightIcon.style.display = 'inline-block';
+        if (darkIcon) darkIcon.style.display = 'none';
+        if (lightIconMobile) lightIconMobile.style.display = 'inline-block';
+        if (darkIconMobile) darkIconMobile.style.display = 'none';
     }
 }
 
@@ -40,63 +112,62 @@ function toggleTheme() {
     const isDarkMode = htmlElement.classList.contains('dark-mode');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     
-    // Toggle icon visibility
-    if (isDarkMode) {
-        lightIcon.style.display = 'none';
-        darkIcon.style.display = 'inline-block';
-    } else {
-        lightIcon.style.display = 'inline-block';
-        darkIcon.style.display = 'none';
+    const lightIcon = document.getElementById('lightIcon');
+    const darkIcon = document.getElementById('darkIcon');
+    const lightIconMobile = document.getElementById('lightIconMobile');
+    const darkIconMobile = document.getElementById('darkIconMobile');
+    
+    // Toggle icon visibility for desktop
+    if (lightIcon && darkIcon) {
+        if (isDarkMode) {
+            lightIcon.style.display = 'none';
+            darkIcon.style.display = 'inline-block';
+        } else {
+            lightIcon.style.display = 'inline-block';
+            darkIcon.style.display = 'none';
+        }
+    }
+    
+    // Toggle icon visibility for mobile
+    if (lightIconMobile && darkIconMobile) {
+        if (isDarkMode) {
+            lightIconMobile.style.display = 'none';
+            darkIconMobile.style.display = 'inline-block';
+        } else {
+            lightIconMobile.style.display = 'inline-block';
+            darkIconMobile.style.display = 'none';
+        }
     }
 }
 
-// Add click event listener to toggle button
-themeToggle.addEventListener('click', toggleTheme);
+// Attach theme toggle listeners
+function toggleThemeListeners() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    
+    // Remove old listeners and add new ones
+    if (themeToggle) {
+        themeToggle.removeEventListener('click', toggleTheme);
+        themeToggle.addEventListener('click', toggleTheme);
+    }
 
-// Initialize theme on page load
-initializeTheme();
+    if (themeToggleMobile) {
+        themeToggleMobile.removeEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+    }
+}
 
 
 // Active Page Indicator
 function updateActiveLink() {
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const currentPath = window.location.pathname.toLowerCase();
-    
-    // Remove active class from all links
-    navLinks.forEach(link => link.classList.remove('active'));
-    
-    // Determine which page we're on
-    let activePage = 'home'; // default
-    
-    if (currentPath.includes('menu')) {
-        activePage = 'menu';
-    } else if (currentPath.includes('promo')) {
-        activePage = 'promo';
-    } else if (currentPath.includes('about')) {
-        activePage = 'about';
-    } else if (currentPath === '/index.html' || currentPath === '/' || currentPath.endsWith('index.html')) {
-        activePage = 'home';
-    }
-    
-    // Add active class to corresponding link
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href').toLowerCase();
-        
-        if (activePage === 'home' && (href === '/index.html' || href === 'index.html')) {
-            link.classList.add('active');
-        } else if (activePage === 'menu' && href.includes('menu')) {
-            link.classList.add('active');
-        } else if (activePage === 'promo' && href.includes('promo')) {
-            link.classList.add('active');
-        } else if (activePage === 'about' && href.includes('about')) {
-            link.classList.add('active');
-        }
-    });
+    // Active link indicators have been disabled - no visual feedback needed
 }
 
-// Update active link on page load
+// Active link indicator disabled on page load
 document.addEventListener('DOMContentLoaded', () => {
-    updateActiveLink();
+    // updateActiveLink() call removed
+    // Ensure theme listeners are set up
+    setTimeout(toggleThemeListeners, 50);
 });
 
 // Handle delivery scroll on home page
